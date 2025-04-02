@@ -23,11 +23,13 @@ jobs:
 
       # setup Flutter
       - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.6.0'
+        run: |
+          git clone --depth 1 https://github.com/flutter/flutter.git -b stable
+          echo "$PWD/flutter/bin" >> $GITHUB_PATH
+          flutter --version
+    
 
-      # install dependencies
+    # install dependencies
       - name: Install dependencies
         run: flutter pub get
 
