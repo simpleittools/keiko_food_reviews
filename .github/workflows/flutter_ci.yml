@@ -1,0 +1,40 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+
+  pull_requests:
+    branches:
+      - dev
+      - main
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      # checkout the code from the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # setup Flutter
+      - name: Set up Flutter
+        users: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+
+      # install dependencies
+      - name: Install dependencies
+        run: flutter pub get
+
+      # run code formatting checks
+      - name: Run flutter analyze
+        run: flutter analyze
+
+      # run tests
+      - name: Run tests
+        run: flutter test
