@@ -16,6 +16,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Clear Flutter Cache
+      - run: flutter precache --force
+
       # Step 1: Check out your repository
       - name: Checkout repository
         uses: actions/checkout@v3
