@@ -23,7 +23,7 @@ jobs:
 
       # setup Flutter
       - name: Set up Flutter
-        users: subosito/flutter-action@v2
+        uses: subosito/flutter-action@v2
         with:
           flutter-version: 'stable'
 
