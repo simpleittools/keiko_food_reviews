@@ -5,15 +5,22 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:keiko_food_reviews/main.dart';
+import 'package:keiko_food_reviews/pages/home.dart';
 
 void main() {
   testWidgets('MyApp renders correctly', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
 
-    // verify the placeholder
+    // verify the MaterialApp
+    expect(find.byType(MaterialApp), findsOneWidget);
+
+    // verify the home widget is rendered
+    expect(find.byType(Home), findsOneWidget);
+
+    // verify the placeholder is rendering on the home widget
     expect(find.byType(Placeholder), findsOneWidget);
   });
 }
