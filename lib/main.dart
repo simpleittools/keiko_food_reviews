@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:keiko_food_reviews/helper/themes.dart';
 import 'package:keiko_food_reviews/pages/home.dart';
 
 void main() {
@@ -10,8 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: Themes.lightTheme(),
+      darkTheme: Themes.darkTheme(),
+      themeMode: ThemeMode.system,
       home: Home(),
     );
   }
