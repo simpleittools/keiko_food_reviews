@@ -23,6 +23,6 @@ void main() {
     expect(find.byType(Home), findsOneWidget);
 
     // verify the placeholder is rendering on the home widget
-    expect(find.byType(Placeholder), findsOneWidget);
+    expect(find.byType(Scaffold), findsOneWidget);
   });
 }
