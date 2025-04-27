@@ -28,8 +28,8 @@ enum Affordability {
 }
 
 enum ResponsiveSizes {
-  mobile(600.0),
-  weDesktopTablet(601.0);
+  mobile(640.0),
+  weDesktopTablet(641.0);
 
   const ResponsiveSizes(this.value);
 
